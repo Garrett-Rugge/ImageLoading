@@ -40,7 +40,7 @@ void Image::load(const char * filename, int w, int h) {
 #endif
 }
 
-void Image::draw() const {
+void Image::draw(int x, int y){
 	for (int i = 0; i < w; ++i) {
 		for (int j = 0; j < h; ++j) {
 			byte r = pixels[j * w * 3 + i * 3 + 0];

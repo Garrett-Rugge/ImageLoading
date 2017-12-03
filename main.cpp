@@ -67,13 +67,23 @@ int main(int argc, char * argv[]) {
 	}
 
 	Image image;
-	image.load("ducky.bmp", 100, 100);
+	image.load("ducky.bmp", 200, 200);
+	Image kappa;
+	kappa.load("kappa.bmp", 200, 200);
 
 	int num_frames = duration_in_seconds * frames_per_second;
+	int a = 0;
+	int b = 0;
+	int x = 100;
+	int y = 100;
 	for (int i = 0; i < num_frames; ++i) {
 		frame.clear();
-		image.draw();
+		image.draw(a, b);
+		kappa.draw(x, y);
 		frame.write(pipe);
+		a+=3;
+		x+=2;
+		y+=2;
 	}
 
 	fflush(pipe);
